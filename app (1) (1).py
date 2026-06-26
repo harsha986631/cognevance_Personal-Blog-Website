@@ -1,25 +1,3 @@
-"""
-Online Job Portal System
-=========================
-A full-stack job portal built with Flask (backend + API), SQLite (database),
-and an embedded responsive Bootstrap 5 frontend — all in this ONE file.
-
-Features:
-- User registration/login with role-based access (Job Seeker / Employer)
-- Password hashing (werkzeug)
-- Job posting & management (Employers)
-- Job applications (Job Seekers)
-- Search & filtering (keyword, location, job type)
-- Profile management
-- JSON REST API endpoints (for /api/...) in addition to the HTML dashboard
-- Auto-creates the database and tables on first run
-
-Run:
-    pip install flask
-    python app.py
-Then open: http://127.0.0.1:5000
-"""
-
 import os
 import sqlite3
 from datetime import datetime
