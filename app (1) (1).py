@@ -926,27 +926,3 @@ if __name__ == "__main__":
         init_db()  # safe: uses CREATE TABLE IF NOT EXISTS
     app.run(debug=True, host="127.0.0.1", port=5000)
 
-# --------------------------------------------------------------------------
-# SWITCHING FROM SQLite TO MySQL / PostgreSQL
-# --------------------------------------------------------------------------
-# This file uses SQLite (Python's built-in sqlite3 module) so it runs with
-# ZERO extra setup. To use MySQL or PostgreSQL instead for production:
-#
-# 1. Install a connector:
-#       MySQL:      pip install mysql-connector-python
-#       PostgreSQL: pip install psycopg2-binary
-#
-# 2. Replace the get_db()/init_db() functions's sqlite3.connect(...) calls
-#    with the equivalent connector, e.g. for MySQL:
-#       import mysql.connector
-#       conn = mysql.connector.connect(
-#           host="localhost", user="root", password="yourpass", database="jobportal"
-#       )
-#    For PostgreSQL:
-#       import psycopg2
-#       conn = psycopg2.connect("dbname=jobportal user=postgres password=yourpass host=localhost")
-#
-# 3. Adjust the SQL slightly: MySQL/PostgreSQL use AUTO_INCREMENT / SERIAL
-#    instead of SQLite's AUTOINCREMENT, and `?` placeholders become `%s`.
-#
-# The application logic, routes, and templates do NOT need to change.
